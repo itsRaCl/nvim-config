@@ -1,0 +1,7 @@
+require("configs.plugins")
+require("configs.remaps")
+require("configs.set")
+require("configs.lsp")
+require("configs.theme")
+require("configs.treesitter")
+require("configs.null_ls")
