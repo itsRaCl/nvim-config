@@ -1,3 +1,4 @@
+vim.o.termguicolors = true
 vim.g.catppuccin_flavour = "mocha"
 
 require("catppuccin").setup({ styles = { comments = { "italic" }, } })
