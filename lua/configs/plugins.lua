@@ -33,8 +33,16 @@ return require('packer').startup(function(use)
     }
     --TREESITTER
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    -- PRISMA.JS
+    use 'prisma/vim-prisma'
     -- COLOR SCHEME
     use { 'catppuccin/nvim', as = "catppuccin" }
-
+    -- CONTEXT PACKING
     use 'wellle/context.vim'
+    -- COMPETITVE PROGRAMMING
+    use 'p00f/cphelper.nvim'
+    -- LATEX
+    use 'lervag/vimtex'
+    -- CODE FOLDING
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

@@ -17,18 +17,6 @@ lsp.on_attach(function(client, bufnr)
     })
     lsp.buffer_autoformat()
 end)
---lsp.format_on_save({
---format_opts = {
---async = false,
---timeout_ms = 100000
---},
---servers = {
---['rust-analyzer'] = { 'rust' },
---['null-ls'] = { 'javascript', 'typescript', 'python', 'json', 'css', 'scss', 'markdown',
---'javascriptreact', 'typescriptreact', 'vue' },
---['lua_ls'] = { 'lua' },
---}
---})
 
 
 lsp.setup()
