@@ -1,6 +1,4 @@
 vim.g.mapleader = " "
-vim.g['cph#dir'] = "~/code/contests"
-vim.g['cph#vsplit'] = true
 vim.keymap.set("n", "<leader>n", vim.cmd.Ex)
 
 -- TELESCOPE REMAPS --
@@ -21,3 +19,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- FOLDING
 vim.keymap.set('n', '<leader>F', require('ufo').openAllFolds)
 vim.keymap.set('n', '<leader>U', require('ufo').closeAllFolds)
+
+-- Copy to + register
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
