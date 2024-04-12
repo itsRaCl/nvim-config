@@ -1,3 +1,5 @@
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 local lsp = require('lsp-zero').preset({})
 
 lsp.nvim_workspace()
@@ -20,3 +22,10 @@ end)
 
 
 lsp.setup()
+
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp_action.luasnip_supertab(),
+        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    })
+})

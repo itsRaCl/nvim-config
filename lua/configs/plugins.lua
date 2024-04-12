@@ -43,6 +43,13 @@ return require('packer').startup(function(use)
     use 'p00f/cphelper.nvim'
     -- LATEX
     use 'lervag/vimtex'
-    -- CODE FOLDING
-    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+    -- FLUTTER
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim',
+        },
+    }
+    use 'norcalli/nvim-colorizer.lua'
 end)
