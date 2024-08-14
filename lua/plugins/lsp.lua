@@ -34,6 +34,7 @@ return {
 				"gopls",
 				"clangd",
 				"pyright",
+				"tsserver",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -52,6 +53,17 @@ return {
 								diagnostics = {
 									globals = { "vim", "it", "describe", "before_each", "after_each" },
 								},
+							},
+						},
+					})
+				end,
+				["tsserver"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.tsserver.setup({
+						capabilities = capabilities,
+						init_options = {
+							preferences = {
+								disableSuggestions = true,
 							},
 						},
 					})

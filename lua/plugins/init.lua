@@ -1,5 +1,5 @@
 return {
-	{ "catppuccin/nvim",                 name = "catppuccin",   priority = 1000 },
+	{ "dracula/vim", name = "dracula", priority = 1000 },
 	{
 		"windwp/nvim-autopairs",
 		opts = {
@@ -23,10 +23,10 @@ return {
 			vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 		end,
 	},
-	{ "tpope/vim-surround",              name = "surround" },
-	{ "tpope/vim-fugitive",              name = "fugitive" },
-	{ "tpope/vim-endwise",               name = "endwise" },
-	{ "preservim/nerdcommenter",         name = "nerdcommenter" },
+	{ "tpope/vim-surround", name = "surround" },
+	{ "tpope/vim-fugitive", name = "fugitive" },
+	{ "tpope/vim-endwise", name = "endwise" },
+	{ "preservim/nerdcommenter", name = "nerdcommenter" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"akinsho/flutter-tools.nvim",
@@ -36,6 +36,6 @@ return {
 			"stevearc/dressing.nvim", -- optional for vim.ui.select
 		},
 		config = true,
-		opts = {}
+		opts = {},
 	},
 }
