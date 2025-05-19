@@ -1,5 +1,5 @@
 return {
-	{ "dracula/vim", name = "dracula", priority = 1000 },
+	{ "dracula/vim",                     name = "dracula",      priority = 1000 },
 	{
 		"windwp/nvim-autopairs",
 		opts = {
@@ -20,13 +20,13 @@ return {
 		"mbbill/undotree",
 		name = "undotree",
 		config = function()
-			vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+			vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim_undotree"
 		end,
 	},
-	{ "tpope/vim-surround", name = "surround" },
-	{ "tpope/vim-fugitive", name = "fugitive" },
-	{ "tpope/vim-endwise", name = "endwise" },
-	{ "preservim/nerdcommenter", name = "nerdcommenter" },
+	{ "tpope/vim-surround",              name = "surround" },
+	{ "tpope/vim-fugitive",              name = "fugitive" },
+	{ "tpope/vim-endwise",               name = "endwise" },
+	{ "preservim/nerdcommenter",         name = "nerdcommenter" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"akinsho/flutter-tools.nvim",
@@ -38,4 +38,5 @@ return {
 		config = true,
 		opts = {},
 	},
+	{ "fladson/vim-kitty" },
 }
