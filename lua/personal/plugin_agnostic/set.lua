@@ -2,19 +2,28 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.g.python3_host_prog = "/home/racl/code/.venv/neovim/bin/python"
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.g.have_nerd_font = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.smartindent = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
+
+vim.o.smartindent = true
 
 vim.wo.wrap = false
 
-vim.opt.updatetime = 1000
-vim.opt.termguicolors = true
+vim.o.updatetime = 250
+vim.o.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.o.scrolloff = 8
+vim.o.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.opt.listchars = {
+	tab = '» ', trail = '·', nbsp = '␣'
+}
