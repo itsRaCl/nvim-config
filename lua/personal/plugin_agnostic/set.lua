@@ -17,6 +17,8 @@ vim.wo.wrap = false
 vim.o.updatetime = 250
 vim.o.termguicolors = true
 
+vim.o.confirm = true
+
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -24,6 +26,7 @@ vim.opt.isfname:append("@-@")
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.list = true
 vim.opt.listchars = {
 	tab = '» ', trail = '·', nbsp = '␣'
 }
