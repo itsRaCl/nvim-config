@@ -3,8 +3,7 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		opts = {
-			fast_wrap = {},
-		},
+			fast_wrap = {}, },
 		event = "InsertEnter",
 		config = true,
 		-- use opts = {} for passing setup options
@@ -19,7 +18,26 @@ return {
 		"mbbill/undotree",
 		name = "undotree",
 	},
-	{ "tpope/vim-fugitive",      name = "fugitive" },
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+		}
+	},
 	{ "tpope/vim-endwise",       name = "endwise" },
 	{ "preservim/nerdcommenter", name = "nerdcommenter" },
 	{
@@ -91,6 +109,19 @@ return {
 			require("nvim-tree").setup {}
 		end,
 	},
-
+	{ "github/copilot.vim" },
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log and async functions
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+		opts = {
+			-- See Configuration section for options
+		},
+		-- See Commands section for default commands if you want to lazy load on them
+	},
+	{ "wellle/context.vim" },
 
 }

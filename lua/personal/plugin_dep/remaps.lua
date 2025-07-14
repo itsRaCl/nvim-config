@@ -70,8 +70,5 @@ autocmd("LspAttach", {
 	end,
 })
 
--- FUGITIVE
-vim.keymap.set("n", "<leader>g", vim.cmd.Git)
-
 -- NVIM TREE
 vim.keymap.set("n", "<leader>n", require('nvim-tree.api').tree.toggle)

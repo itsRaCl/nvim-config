@@ -19,6 +19,9 @@ return {
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
+		local capabilities = cmp_lsp.default_capabilities()
+
+
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -28,6 +31,17 @@ return {
 				"gopls",
 				"clangd",
 				"pyright",
+			},
+			handlers = {
+				function(server_name)
+					local server = servers[server_name] or {}
+					-- This handles overriding only values explicitly passed
+					-- by the server configuration above. Useful when disabling
+					-- certain features of an LSP (for example, turning off formatting for ts_ls)
+					server.capabilities = vim.tbl_deep_extend('force', {}, capabilities,
+						server.capabilities or {})
+					require('lspconfig')[server_name].setup(server)
+				end,
 			},
 		})
 
